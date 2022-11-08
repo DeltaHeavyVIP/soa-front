@@ -38,7 +38,7 @@ export const DeleteForm = () => {
             toast.promise(deleteProductById(Number(get(product, 'id'))), {
                 loading: 'Delete...',
                 success: "Success",
-                error: (err) => get(err, 'response.data.message', 'Error'),
+                error: (err) => get(err, 'response.data.message', 'Product not found'),
             }).then(() => {
                 setIsDataNeedsToBeUpdated(true)
                 setShowDelete(false)

@@ -24,7 +24,7 @@ export const FindByProductId = () => {
         findById(id).then((response) => {
             setRoutes([response.data])
         }).catch((err) => {
-            toast.error(get(err, 'response.data.message', 'Error'))
+            toast.error(get(err, 'response.data.message', 'Product not found'))
         }).finally(() => setIsLoading(false))
     }
 

@@ -1,4 +1,4 @@
-import {filtersState, isDataNeedsToBeUpdatedState, showModalFormForFilter} from "../../state/atoms";
+import {filtersState, isDataNeedsToBeUpdatedState, pagingState, showModalFormForFilter} from "../../state/atoms";
 import Button from "react-bootstrap/Button";
 import {useRecoilState} from "recoil";
 import set from "lodash.set";
@@ -16,6 +16,7 @@ export const FiltersForm = () => {
 
     const [show, setShow] = useRecoilState(showModalFormForFilter);
     const [filters, setFilters] = useRecoilState(filtersState)
+    const [pages, setPages] = useRecoilState(pagingState)
     const [, setIsDataNeedsToBeUpdated] = useRecoilState(isDataNeedsToBeUpdatedState)
 
     const handleShow = () => {
@@ -47,9 +48,19 @@ export const FiltersForm = () => {
                 "z": null
             }
         })
+        setShow(false)
+        setIsDataNeedsToBeUpdated(true)
+        setPages({
+            "number": 1,
+            "size": pages["size"]
+        })
     }
     const apply = () => {
         setFilters(filters)
+        setPages({
+            "number": 1,
+            "size": pages["size"]
+        })
         setIsDataNeedsToBeUpdated(true)
         setShow(false)
     }

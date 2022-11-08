@@ -54,7 +54,7 @@ export const UpdateForm = () => {
             toast.promise(updateProductLink(product), {
                 loading: 'Trying to update...',
                 success: "Success",
-                error: (err) => get(err, 'response.data.message', 'Error'),
+                error: (err) => get(err, 'response.data.message', 'Product not found'),
             }).then(() => {
                 setIsDataNeedsToBeUpdated(true)
                 setShowUpdate(false)

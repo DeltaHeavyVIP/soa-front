@@ -43,7 +43,6 @@ export const SortForm = () => {
         setFeedback({})
     }
 
-    //todo не работает информирование о плохом вводе
     const apply = () => {
         const freshFeedback = validatePage(page)
         setFeedback(freshFeedback)

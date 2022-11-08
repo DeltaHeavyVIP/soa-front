@@ -1,0 +1,76 @@
+@import "~bootstrap/scss/bootstrap";
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: #495057;
+}
+
+.app {
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+.bg-gray-700 {
+    background-color: #495057;
+}
+
+.bg-gray-900 {
+    background-color: #212529;
+}
+
+.selected > td {
+    background-color: #f1aeb5;
+}
+
+tbody > tr:hover {
+    opacity: .8;
+}
+
+td {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tooltip-inner {
+    background: rosybrown;
+}
+
+.tooltip-inner:empty {
+    visibility: hidden;
+}
+
+.tooltip-arrow {
+    visibility: hidden;
+}
+
+.input-group > .form-select {
+    flex: none;
+    width: auto;
+}
+
+.form-control[type="number"]:invalid {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
+}
+
+#filtersForm .input-group-text {
+    width: 126px;
+}
+
+.input-group .btn:first-child {
+    width: 102px;
+}
+
+#sortForm .input-group-text {
+    overflow: auto;
+    width: calc(100% - 182px);
+}
+
+.dropdown-menu {
+    max-height: 200px;
+    overflow: auto;
+}

@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-const SERVICE_1 = 'https://localhost:10102/api/v1'
-const SERVICE_2 = 'https://localhost:10110/api/v1/ebay'
+const SERVICE_1 = 'http://localhost:9912/api/v1'
+const SERVICE_2 = 'http://localhost:9912/api/v1/ebay'
 
 export const countProductByPrice = (price) => {
     return axios.get(SERVICE_1 + '/count/products/price_high_parameter?price=' + price)
@@ -28,7 +28,7 @@ export const createProduct = (product) => {
     return axios.post(SERVICE_1 + '/products', resp, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
-            'Accept': 'application/json, text/plain, */*'
+            'Accept': 'application/json, text/plain'
         }
     })
 }
@@ -79,7 +79,7 @@ export const getProducts = (filters, sorting, paging) => {
     return axios.post(SERVICE_1 + '/products/filter', resp, {
         headers: {
             'Content-Type': 'application/json;charset=UTF-8',
-            'Accept': 'application/json, text/plain, */*'
+            'Accept': 'application/json, text/plain'
         }
     })
 }
